@@ -7,6 +7,14 @@ cur = conn.cursor()
 app = Flask(__name__)
 
 
+def dbconn():
+    if cur is not None:
+        x = True
+    else:
+        x = False
+    return x
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
